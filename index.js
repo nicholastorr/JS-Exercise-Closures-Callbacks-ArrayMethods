@@ -177,8 +177,16 @@ function lowerCaseStrings(strings) {
  *
  * [2] Invoking `isItAnApple` with `['a', 'b', 'c' ]` will return `[ false, false, false ]`.
 */
-function isItAnApple(/* code here */) {
-  /* code here */
+function isItAnApple(strings) {
+  let newArr = strings.map(ele => {
+    if (ele === "apple"){
+      return true;
+    }
+    else {
+      return false;
+    }
+  })
+  return newArr
 }
 
 /**
@@ -197,8 +205,8 @@ function isItAnApple(/* code here */) {
  *
  * [2] Invoking `removeApple` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
-function removeApple(/* code here */) {
-  /* code here */
+function removeApple(strings) {
+  return strings.filter(ele => ele !== "apple");
 }
 
 /**
@@ -216,8 +224,9 @@ function removeApple(/* code here */) {
  *
  * [2] Invoking `stringSmash` with `['a', 'b', 'c' ]` will return `abc`.
 */
-function stringSmash(/* code here */) {
-  /* code here */
+function stringSmash(strings) {
+  const reducer = (accumulator, currentValue) => accumulator += currentValue;
+  return strings.reduce(reducer);
 }
 
 // A local community center is holding a fund raising 5k fun run and has invited
@@ -235,8 +244,11 @@ function stringSmash(/* code here */) {
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
-  /* CODE HERE */
+function getFullNames(runners) {
+
+  return runners.map(ele => {
+    return ele.last_name + ", " + ele.first_name;
+  });
 }
 
 /**
